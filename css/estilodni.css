@@ -1,0 +1,100 @@
+/* ==== Reset y estructura básica ==== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f6f8;
+  color: #2c3e50;
+  padding: 20px;
+  text-align: center;
+}
+
+/* ==== Contenedor principal ==== */
+.container {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* ==== Títulos ==== */
+h1 {
+  font-size: 28px;
+  color: #2980b9;
+  margin-bottom: 25px;
+}
+
+.card h2 {
+  font-size: 22px;
+  color: #34495e;
+  margin-bottom: 15px;
+}
+
+/* ==== Formulario ==== */
+input[type="text"] {
+  width: 80%;
+  padding: 12px;
+  margin: 10px 0 20px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus {
+  border-color: #3498db;
+  outline: none;
+}
+
+button {
+  padding: 12px 20px;
+  font-size: 16px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+/* ==== Resultado de la consulta ==== */
+.resultado {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #ecf0f1;
+  border: 1px solid #bdc3c7;
+  border-radius: 6px;
+  font-size: 16px;
+  color: #2c3e50;
+}
+
+/* ==== Botón de regreso ==== */
+div > button:last-of-type {
+  margin-top: 40px;
+  background-color: #16a085;
+}
+
+div > button:last-of-type:hover {
+  background-color: #138d75;
+}
+
+/* ==== Responsive ==== */
+@media (max-width: 600px) {
+  .container {
+    padding: 20px;
+  }
+
+  input[type="text"] {
+    width: 100%;
+  }
+}

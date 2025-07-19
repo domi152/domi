@@ -1,0 +1,59 @@
+/* estilobienbenida.css */
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f6f8;
+  color: #333;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  background-color: #4CAF50;
+  color: white;
+  padding: 20px 0;
+  margin: 0;
+}
+
+#nombre, #email {
+  font-size: 1.2em;
+  margin-top: 10px;
+}
+
+#foto {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  margin-top: 20px;
+  object-fit: cover;
+  border: 3px solid #4CAF50;
+}
+
+.btn-container {
+  margin-top: 30px;
+}
+
+button {
+  background-color: #2196F3;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: #1976D2;
+}
+
+.btn-salir {
+  background-color: #f44336;
+}
+
+.btn-salir:hover {
+  background-color: #d32f2f;
+}

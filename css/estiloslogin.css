@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+/* --- Variables CSS --- */
+:root {
+    /* Colores base */
+    --color-background-dark: #1a1a1a;
+    --color-container-dark: #2c2c2c;
+    --color-primary-purple: #9c27b0;
+    --color-primary-purple-hover: #7b1fa2;
+    --color-accent-purple: #d500f9;
+    --color-text-light: #f0f0f0;
+    --color-text-muted: #bdbdbd;
+    --color-border-dark: #444444;
+    --color-focus-ring: rgba(156, 39, 176, 0.4);
+    --color-gradient-start: #2a003f;
+    --color-gradient-end: #1a1a1a;
+    --color-gradient-accent: linear-gradient(to right, #9c27b0, #d500f9);
+
+    /* Brillo */
+    --color-glow-start: rgba(156, 39, 176, 0.5);
+    --color-glow-end: rgba(156, 39, 176, 0);
+
+    /* Espaciado */
+    --space-xs: 8px;
+    --space-sm: 12px;
+    --space-md: 16px;
+    --space-lg: 24px;
+    --space-xl: 40px;
+
+    /* Bordes y sombras */
+    --border-radius-sm: 8px;
+    --border-radius-md: 12px;
+    --shadow-dark-subtle: 0 5px 15px rgba(0, 0, 0, 0.4);
+    --shadow-dark-strong: 0 15px 40px rgba(0, 0, 0, 0.6);
+
+    /* Transiciones */
+    --transition-speed: 0.3s;
+    --transition-easing: ease-in-out;
+}
+
+/* --- Body --- */
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, var(--color-gradient-start), var(--color-gradient-end));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    color: var(--color-text-light);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* --- Contenedor Principal --- */
+.login-container {
+    background-color: var(--color-container-dark);
+    padding: var(--space-xl);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-dark-strong);
+    text-align: center;
+    width: 100%;
+    max-width: 420px;
+    animation: fadeInScale 0.8s var(--transition-easing) forwards,
+               glowEffect 2s infinite alternate ease-in-out;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Animaciones */
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes glowEffect {
+    0% {
+        box-shadow: var(--shadow-dark-strong),
+                    0 0 10px 5px var(--color-glow-start),
+                    0 0 20px 10px rgba(156, 39, 176, 0.2);
+    }
+    50% {
+        box-shadow: var(--shadow-dark-strong),
+                    0 0 20px 8px var(--color-glow-start),
+                    0 0 40px 15px rgba(156, 39, 176, 0.1);
+    }
+    100% {
+        box-shadow: var(--shadow-dark-strong),
+                    0 0 10px 5px var(--color-glow-start),
+                    0 0 20px 10px rgba(156, 39, 176, 0.2);
+    }
+}
+
+/* --- Título --- */
+h2 {
+    margin-bottom: var(--space-xl);
+    color: var(--color-text-light);
+    font-weight: 700;
+    font-size: 2.5em;
+    letter-spacing: -0.04em;
+}
+
+/* --- Inputs --- */
+input[type="text"],
+input[type="password"] {
+    width: calc(100% - (var(--space-md) * 2));
+    padding: var(--space-md);
+    margin-bottom: var(--space-lg);
+    background-color: #3a3a3a;
+    color: var(--color-text-light);
+    border: 1px solid var(--color-border-dark);
+    border-radius: var(--border-radius-sm);
+    font-size: 1em;
+    outline: none;
+    transition: border-color var(--transition-speed) var(--transition-easing),
+                box-shadow var(--transition-speed) var(--transition-easing);
+    box-sizing: border-box;
+    appearance: none;
+}
+
+input::placeholder {
+    color: var(--color-text-muted);
+    opacity: 0.8;
+}
+
+input:focus {
+    border-color: var(--color-primary-purple);
+    box-shadow: 0 0 0 3px var(--color-focus-ring);
+}
+
+/* --- Botón de Login --- */
+button {
+    background: var(--color-primary-purple);
+    color: var(--color-text-light);
+    padding: var(--space-md) var(--space-lg);
+    border: none;
+    border-radius: var(--border-radius-sm);
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    transition: background var(--transition-speed) var(--transition-easing),
+                transform 0.2s var(--transition-easing),
+                box-shadow var(--transition-speed) var(--transition-easing);
+    width: 100%;
+    margin-bottom: var(--space-lg);
+}
+
+button:hover {
+    background: var(--color-primary-purple-hover);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-dark-subtle);
+}
+
+button:active {
+    transform: translateY(0);
+    box-shadow: none;
+    background: var(--color-primary-purple);
+}
+
+/* --- Divider --- */
+.divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: var(--space-xl) 0;
+    color: var(--color-text-muted);
+    font-size: 0.85em;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid var(--color-border-dark);
+}
+
+.divider:not(:empty)::before {
+    margin-right: var(--space-sm);
+}
+
+.divider:not(:empty)::after {
+    margin-left: var(--space-sm);
+}
+
+/* --- Google Sign-In --- */
+.g_id_signin {
+    display: flex;
+    justify-content: center;
+    margin-top: var(--space-lg);
+    margin-bottom: var(--space-md);
+    filter: brightness(0.9);
+    transition: filter 0.3s ease;
+}
+
+.g_id_signin:hover {
+    filter: brightness(1.1);
+}
+
+/* --- Responsivo --- */
+@media (max-width: 500px) {
+    .login-container {
+        margin: var(--space-md);
+        padding: var(--space-lg);
+        box-shadow: var(--shadow-dark-subtle);
+        animation: fadeInScale 0.8s var(--transition-easing) forwards;
+    }
+
+    h2 {
+        font-size: 2em;
+        margin-bottom: var(--space-lg);
+    }
+
+    input,
+    button {
+        padding: var(--space-sm);
+        font-size: 0.95em;
+    }
+
+    .divider {
+        margin: var(--space-lg) 0;
+    }
+}
